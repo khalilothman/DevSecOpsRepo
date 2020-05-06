@@ -14,7 +14,15 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "MAVEN_HOME = ${MAVEN_HOME}"
             ''' 
-      }
-      }
-      }
+          }
+            }
+                            }
+                            
+     stage ('Build') {
+      steps {
+      bat 'mvn clean package'
+            }
+                    }
+         
+                            
       }
