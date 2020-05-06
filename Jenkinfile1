@@ -1,6 +1,30 @@
 pipeline {
 
-/* if (gitExe != null)
+
+  agent any 
+  tools {
+    maven 'Maven'
+  }
+  
+  stages { 
+                           
+     stage ('Build') {
+      steps {
+      withMaven(maven : 'apache-maven-3.6.1') {
+                bat'mvn clean compile'
+    
+       }
+    }
+                         
+                         
+                         
+    }
+    }
+    
+    
+    
+    
+    /* if (gitExe != null)
 			return resolveGrandparentFile(gitExe);
 if (searchPath(path, "bash.exe") != null) { //$NON-NLS-1$
 			// This isn't likely to work, but its worth trying:
@@ -20,31 +44,3 @@ if (searchPath(path, "bash.exe") != null) { //$NON-NLS-1$
 
 */
 
-
-
-
-  agent any 
-  tools {
-    maven 'Maven'
-  }
-  
-  stages { 
-  
-  stage {
-  steps {
-            withMaven(maven : 'apache-maven-3.6.1') {
-                bat'mvn clean compile'
-            }
-        }
-    }
-                         
-     stage ('Build') {
-      steps {
-      sh 'mvn clean package'
-       }
-    }
-                         
-                         
-                         
-    }
-    }
