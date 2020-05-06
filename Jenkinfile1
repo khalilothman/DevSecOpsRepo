@@ -1,6 +1,6 @@
 pipeline {
 
-if (gitExe != null)
+/* if (gitExe != null)
 			return resolveGrandparentFile(gitExe);
 if (searchPath(path, "bash.exe") != null) { //$NON-NLS-1$
 			// This isn't likely to work, but its worth trying:
@@ -18,7 +18,7 @@ if (searchPath(path, "bash.exe") != null) { //$NON-NLS-1$
 
 		return null;
 
-
+*/
 
   agent any 
   tools {
