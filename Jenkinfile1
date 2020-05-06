@@ -24,7 +24,14 @@ pipeline {
     }
        
        
-       
+       stage ('Deploy-To-Tomcat') {
+            steps {
+           sshagent(['tomcat']) {
+                bat 'scp -o StrictHostKeyChecking=no target/*.war administrator@3.15.227.206:C:\Program Files (x86)\Apache Software Foundation\Tomcat 9.0\webapps/DevSecOpsRepo
+.war'
+              }      
+           }       
+        }
        
        
        
