@@ -3,14 +3,16 @@ pipeline {
   tools {
     maven 'Maven'
   }
-  stages {    
-     stage ('Initialize') {
+  
+                         
+                         
+     stage ('Build') {
       steps {
-        sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-            ''' 
-            }
-                         }   
+      sh 'mvn clean package'
+       }
+    }
+                         
+                         
+                         
     }
     }
