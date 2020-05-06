@@ -20,12 +20,23 @@ if (searchPath(path, "bash.exe") != null) { //$NON-NLS-1$
 
 */
 
+
+
+
   agent any 
   tools {
     maven 'Maven'
   }
   
-  stages {                 
+  stages { 
+  
+  stage {
+  steps {
+            withMaven(maven : 'apache-maven-3.6.1') {
+                bat'mvn clean compile'
+            }
+        }
+    }
                          
      stage ('Build') {
       steps {
