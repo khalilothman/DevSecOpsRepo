@@ -19,7 +19,6 @@ pipeline {
       stage ('Source Composition Analysis') {
       steps {         
          bat 'curl "https://github.com/khalilothman/DevSecOpsRepo/blob/master/owasp-dependency-check.sh"'
-         bat 'chmod +x owasp-dependency-check.sh'
          bat 'bash owasp-dependency-check.sh'
      
         
