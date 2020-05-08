@@ -25,7 +25,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
                sshagent(['Tomcat']) {
-                sh 'ssh -o StrictHostKeyChecking=no target/*.war bitnami@172.31.0.69:/bitnami/tomcat/data/examples/webapp.war'
+                sh 'ssh -o StrictHostKeyChecking=no target/*.war bitnami@172.31.0.69:/bitnami/tomcat/data/examples/WebApp.war'
   
               }      
            }       
