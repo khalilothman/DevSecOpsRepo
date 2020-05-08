@@ -27,7 +27,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['Tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war bitnami@18.220.87.220:/bitnami/tomcat/data/examples/DevSecOpsRepo.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war manager@18.220.87.220:/bitnami/tomcat/data/examples/DevSecOpsRepo.war'
               }      
            }       
     }
