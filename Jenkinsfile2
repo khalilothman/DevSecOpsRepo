@@ -20,10 +20,14 @@ pipeline {
        }
     }
     
+    sshagent(['Tomcat']) {
+    // some block
+}
+    
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['Tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war user@18.220.87.220:/bitnami/tomcat/data/examples/webapp.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war bitnami@18.220.87.220:/bitnami/tomcat/data/examples/webapp.war'
               }      
            }       
     }
