@@ -43,7 +43,13 @@ pipeline {
     }
     
  
-    
+    stage ('DAST') {
+      steps {
+        sshagent(['zap']) {
+         sh 'ssh -o  StrictHostKeyChecking=no bitnami@18.222.205.38 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://18.220.87.220:8080/WebApp/" || true'
+        }
+      }
+    }  
     
     
     
