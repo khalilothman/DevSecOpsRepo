@@ -1,0 +1,44 @@
+pipeline {
+  agent any 
+  tools {
+    maven 'Maven'
+  }
+  stages {    
+     stage ('Initialize') {
+      steps {
+        sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+            ''' 
+      }
+   
+    }
+    
+    stage ('Check-Git-Secrets') {
+      
+    }
+    
+    stage ('Source Composition Analysis') {
+      
+    }
+    
+    stage ('SAST') {
+      
+    }
+    
+    stage ('Build') {
+      
+    }
+    
+    stage ('Deploy-To-Tomcat') {
+            
+    }
+    
+    
+    stage ('DAST') {
+     
+      }
+    }
+    
+  }
+}
