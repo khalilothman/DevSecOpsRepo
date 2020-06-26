@@ -24,6 +24,14 @@ pipeline {
        }
     }
     
+    stage ('ASoC Trial') {
+      steps {
+        
+        appscan application: '6625861d-3c06-4449-9425-7baaaec6c51e', credentials: 'FCA Trial ASoC', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 5)], name: 'WebDev', scanner: static_analyzer(hasOptions: false, target: '/opt/bitnami/jenkins/jenkins_home/workspace/DevSecOps'), type: 'Static Analyzer', wait: true
+        
+      }
+    }
+    
  
     stage ('DAST') {
       steps {
