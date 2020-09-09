@@ -14,7 +14,7 @@ pipeline {
    
     }
     
-    stage ('Check-Git-Secrets') {
+    stage ('Chec-Git-Secrets') {
       
     }
     
